@@ -1,20 +1,32 @@
-import { Route, Routes } from "react-router-dom";
+import { Fragment, Suspense } from "react";
 import "./App.css";
-import LayoutWeb from "./Layout/LayoutWeb";
-import HomePage from "./Page/HomePage";
-import MoviePage from "./Page/MoviePage";
-import MovieDetailsPage from "./Page/MovieDetailsPage";
+import { Route, Routes } from "react-router-dom";
+
+import Main from "./components/layout/Main";
+import Banner from "./components/banner/Banner";
+
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
+// import MoviePage from "./pages/MoviePageV2";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<LayoutWeb />}>
-          <Route index element={<HomePage />} />
-          <Route path="movie" element={<MoviePage />} />
-          <Route path="movie/:movieId" element={<MovieDetailsPage />} />
-        </Route>
-      </Routes>
+      <Fragment>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Main></Main>}>
+              <Route index element={<HomePage></HomePage>} />
+              <Route path="movies" element={<MoviePage></MoviePage>} />
+              <Route
+                path="movie/:movieId"
+                element={<MovieDetailsPage></MovieDetailsPage>}
+              />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Fragment>
     </>
   );
 }
