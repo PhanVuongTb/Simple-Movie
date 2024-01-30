@@ -16,7 +16,7 @@ function App() {
       <Fragment>
         <Suspense>
           <Routes>
-            <Route path="/" element={<Main></Main>}>
+            <Route path="Simple-Movie/" element={<Main></Main>}>
               <Route index element={<HomePage></HomePage>} />
               <Route path="movies" element={<MoviePage></MoviePage>} />
               <Route
