@@ -20,7 +20,7 @@ function App() {
               <Route index element={<HomePage></HomePage>} />
               <Route path="movies" element={<MoviePage></MoviePage>} />
               <Route
-                path="movie/:movieId"
+                path="Simple-Movie/movie/:movieId"
                 element={<MovieDetailsPage></MovieDetailsPage>}
               />
             </Route>
