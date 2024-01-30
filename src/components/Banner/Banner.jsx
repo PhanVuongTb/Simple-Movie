@@ -48,7 +48,9 @@ function BannerItem({ item }) {
             Adventure
           </span>
         </div>
-        <Button onClick={() => navigate(`/movie/${id}`)}>Watch now</Button>
+        <Button onClick={() => navigate(`/Simple-Movie/movie/${id}`)}>
+          Watch now
+        </Button>
       </div>
     </div>
   );
